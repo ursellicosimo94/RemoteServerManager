@@ -1,4 +1,4 @@
-# Server remote manager
+# Remote server manager
 Questo tool php consente semplicemente di collegarsi in modo sequenziale ai vari server configurati, eseguire uno o più comandi e recuperare gli output
 
 ## Installazione
