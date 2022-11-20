@@ -25,15 +25,6 @@ class ExecuterModel extends Model
 	{
 		parent::__construct();
 		$this->setConnections();
-		$this->setValidators();
-	}
-
-	public function setValidators()
-	{
-		$this->validators = [
-			"command" => new Length(["min"=>1]),
-			"server" => new Choice(array_keys($this->connections))
-		];
 	}
 
 	/**
