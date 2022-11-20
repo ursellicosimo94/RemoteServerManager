@@ -1,0 +1,27 @@
+{
+	"Server 1": {
+		"nome": "Server 1",
+		"hostname": "127.0.0.1",
+		"username": "username",
+		"port": 22,
+		"publicKey": "/home/username/.ssh/chiave.key",
+		"authMode": "authWithCertificate"
+	},
+	"Server 2": {
+		"nome": "Server 2",
+		"hostname": "127.0.0.1",
+		"username": "username",
+		"password": "password",
+		"port": 22,
+		"publicKey": "/home/username/.ssh/chiave.key",
+		"authMode": "authWithCertificate"
+	},
+	"Server 3": {
+		"nome": "Server 3",
+		"hostname": "127.0.0.1",
+		"username": "username",
+		"password": "password",
+		"port": 22,
+		"authMode": "authWithPassword"
+	}
+}

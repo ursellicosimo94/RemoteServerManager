@@ -1,0 +1,17 @@
+{
+    "autoload": {
+        "psr-4": {
+            "App\\Controllers\\": "app/controllers/",
+            "App\\Models\\": "app/models/",
+            "App\\src\\": "app/src/",
+            "App\\src\\Objects\\": "app/src/objects",
+            "App\\src\\Interfaces\\": "app/src/interfaces",
+            "App\\Traits\\": "app/traits/",
+            "App\\Providers\\": "app/providers/"
+        }
+    },
+    "require": {
+        "symfony/validator": "^6.1",
+        "phpseclib/phpseclib": "^3.0"
+    }
+}

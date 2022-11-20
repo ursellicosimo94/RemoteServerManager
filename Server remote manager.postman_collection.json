@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "d05bf846-82e2-47c9-a058-231faece1b48",
+		"name": "Server remote manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13061519"
+	},
+	"item": [
+		{ 
+			"name": "Welcome",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocol}}://{{hostname}}:{{port}}/Welcome",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"Welcome"
+					]
+				},
+				"description": "# Chiamata di test\n\nQuesto endpoint serve solo ad effettuare chiamate di test per assicurarsi che il cronManager sia stato correttamente avviato."
+			},
+			"response": []
+		},
+		{
+			"name": "Executer",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"command\": \"crontab -l | grep gino\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocol}}://{{hostname}}:{{port}}/Executer",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"Executer"
+					]
+				},
+				"description": "# Chiamata di test\n\nQuesto endpoint serve solo ad effettuare chiamate di test per assicurarsi che il cronManager sia stato correttamente avviato."
+			},
+			"response": []
+		},
+		{
+			"name": "Executer/execOnServers",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"command\": \"crontab -l | grep gino\",\n    \"servers\": [\n        \"BATCH\",\n        \"BATCH2\",\n        \"BATCH3\",\n        \"BATCH4\",\n        \"BATCH5\",\n        \"BATCH6\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocol}}://{{hostname}}:{{port}}/Executer/execOnServers",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"Executer",
+						"execOnServers"
+					]
+				},
+				"description": "# Chiamata di test\n\nQuesto endpoint serve solo ad effettuare chiamate di test per assicurarsi che il cronManager sia stato correttamente avviato."
+			},
+			"response": []
+		},
+		{
+			"name": "Executer/multipleExecOnServers",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"command\": \"Comando 1\",\n        \"servers\": [\n            \"BATCH\",\n            \"BATCH3\",\n            \"BATCH4\",\n            \"BATCH6\"\n        ]\n    },\n    {\n        \"command\": \"Comando 2\",\n        \"servers\": [\n            \"BATCH\",\n            \"BATCH2\",\n            \"BATCH3\"\n        ]\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{protocol}}://{{hostname}}:{{port}}/Executer/multipleExecOnServers",
+					"protocol": "{{protocol}}",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"Executer",
+						"multipleExecOnServers"
+					]
+				},
+				"description": "# Chiamata di test\n\nQuesto endpoint serve solo ad effettuare chiamate di test per assicurarsi che il cronManager sia stato correttamente avviato."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "hostname",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "port",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "protocol",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
