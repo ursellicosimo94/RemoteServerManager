@@ -271,21 +271,18 @@ class SSHConnection extends Model
     }
 
     /**
-     * Esegue un comando sul server remoto
+     * Esegue un comando sul server remoto e ritorna un array con le righe dei risultati
      *
      * @param string $command Comando da eseguire
-     * @param string|null $pty Nome dell'emulazione pty, se non necessario lasciare a null
-     * @param array|null $env Può essere passato come una matrice associativa di coppie nome/valore da impostare nell'ambiente di destinazione.
-     * @param integer $width Larghezza del terminale virtuale.
-     * @param integer $height Altezza del terminale virtuale.
-     * @param int $width_height_type Può essere uno tra SSH2_TERM_UNIT_CHARS o SSH2_TERM_UNIT_PIXELS.
-     * @return string risultato comando
+     * @return array risultato comando
      */
-    public function execute( string $command, ?string $pty = null, ?array $env = null, int $width = 80, int $height = 25, int $width_height_type = SSH2_TERM_UNIT_CHARS ):string
+    public function execute( string $command ):array
     {
         $this->connectedAndAuthorized();
 
-        return $this->connection->exec($command);
+        $results = explode("\n", $this->connection->exec($command) );
+
+        return array_filter($results);
     }
 
     /**
