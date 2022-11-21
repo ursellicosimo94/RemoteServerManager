@@ -55,4 +55,4 @@ Valori possibili, significato e campi necessari:
 | Valore | Significato | Campi necessari |
 |:-:|:-:|:-:|
 | authWithPassword | Classica autorizzazione con username e password | username<br>password |
-| authWithCertificate | Autenticazione con chiave pubblica e privata | username<br>publicKey<br>[password] |
+| authWithCertificate | Autenticazione con chiave pubblica ed eventualmente anche password | username<br>publicKey<br>[password] |
