@@ -49,7 +49,7 @@ class ExecuterModel extends Model
 	 * @param string $command Comando da eseguire
 	 * @return string Striga di risultato o stringa di errore
 	 */
-	protected function exec( SSHConnection $connection, string $command ):string
+	protected function exec( SSHConnection $connection, string $command ):array
 	{
 		return $connection->execute($command);
 	}
